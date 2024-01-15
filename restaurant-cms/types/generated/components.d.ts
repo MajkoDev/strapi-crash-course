@@ -5,10 +5,11 @@ export interface RestaurantInfoOpenningHours extends Schema.Component {
   info: {
     displayName: 'Openning Hours';
     icon: 'clock';
+    description: '';
   };
   attributes: {
-    Hours: Attribute.String;
-    Days: Attribute.String;
+    hours: Attribute.String;
+    days: Attribute.String;
   };
 }
 

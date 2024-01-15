@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "blocks"
     },
-    "Image": {
+    "image": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -29,11 +29,26 @@
         "audios"
       ]
     },
-    "OpenningHours": {
+    "openningHours": {
       "displayName": "Openning Hours",
       "type": "component",
       "repeatable": false,
       "component": "restaurant-info.openning-hours"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "restaurants"
+    },
+    "avgPrice": {
+      "type": "decimal"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "restaurant"
     }
   }
 }
